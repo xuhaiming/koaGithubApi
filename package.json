@@ -1,0 +1,24 @@
+{
+  "name": "koagithubapi",
+  "version": "1.0.0",
+  "description": "Koa github api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuhaiming/koaGithubApi.git"
+  },
+  "keywords": [
+    "koa",
+    "github",
+    "api"
+  ],
+  "author": "Xu Haiming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xuhaiming/koaGithubApi/issues"
+  },
+  "homepage": "https://github.com/xuhaiming/koaGithubApi#readme"
+}
