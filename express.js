@@ -1,9 +1,11 @@
 var express = require('express');
+var cooieParser = require('cookie-parser');
 var app = express();
 var session = require('express-session');
 var config = require('./config');
 var githubOAuth = require('github-oauth')(config);
 
+app.use(cooieParser());
 app.use(session({
   secret: 'secret',
   cookie: { maxAge: 60000 }
@@ -12,7 +14,6 @@ app.use(session({
 app.get('/', function (req, res) {
 
   console.log(req.cookies);
-
   res.send('Hello World!');
 
 });
@@ -25,9 +26,6 @@ githubOAuth.on('error', function(err) {
 });
 
 githubOAuth.on('token', function(token, resp, tokenResp, req) {
-  var sess = req.session;
-
-  sess.githubToken = token;
 
   resp.end(JSON.stringify(token));
 });
